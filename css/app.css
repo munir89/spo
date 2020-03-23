@@ -1,0 +1,27 @@
+* {
+  /* font-family: 'Fira Sans'; */
+}
+header {
+  margin-top: 50px;
+  color: #ffff;
+}
+
+header div.d-flex {
+  background-color: #2f3293ff;
+}
+#logo {
+  border: 1px solid #ffff;
+  border-radius: 50%;
+  width: 102px;
+  height: 102px;
+  background-color: #ffff;
+}
+#logo img {
+  width: 100px;
+  height: 100px;
+}
+
+h1 {
+  font-size: 1.2rem;
+}
+
