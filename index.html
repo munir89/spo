@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pulse Oximetry With Datalogging System | CETB</title>
   <link rel="shortcut icon" href="images/cetb-favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/app.css">
 </head>
+
 <body class="bg-light">
   <header>
     <div class="container">
-      <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm">
-          <div id="logo" class="float-right">
-            <img src="images/LogoBit.png" alt="CETB Logo">
-          </div>
+      <div class="row d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm">
+        <div id="logo" class="float-right">
+          <img src="images/LogoBit.png" alt="CETB Logo">
+        </div>
         <div class="lh-100 pl-2">
           <h1 class="mb-0 text-white lh-100">College of Electronic Technology</h1>
           <h1 class="mb-0 text-white lh-100">Bni Walid, Libya</h1>
@@ -23,8 +26,33 @@
       </div>
     </div>
   </header>
-  <main>
-
+  <main class="container">
+    <div class="row my-3 p-3 bg-white rounded shadow-lg">
+      <h1 class="border-bottom border-gray pb-2 mb-0 mx-auto">Pulse Oximetry With Datalogging System</h1>
+      <div class="col-12 mt-5">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <label for="name" class="col-md-2 col-form-label">Name</label>
+              <div class="col-md-10 col-sm-12">
+                <input type="text" class="form-control" id="name" placeholder="Enter Name..." autocomplete="off">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="age" class="col-md-2 col-form-label">Age</label>
+              <div class="col-md-10 col-sm-12">
+                <input type="text" class="form-control" id="age" placeholder="Enter Age..." autocomplete="off">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button type="button" class="btn btn-lg btn-block btn-outline-danger"><i class="fas fa-heartbeat fa-3x mr-3"></i>
+              Show My Health Status
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
 
@@ -32,6 +60,8 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/all.min.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>
