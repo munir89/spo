@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Russo One';
-   src: url('/fonts/Russo_One/RussoOne-Regular.ttf');
+   src: url('fonts/Russo_One/RussoOne-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Poppins';
-   src: url('/fonts/Poppins/Poppins-Medium.ttf');
+   src: url('fonts/Poppins/Poppins-Medium.ttf');
 }
 
 * {
