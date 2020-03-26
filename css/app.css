@@ -12,7 +12,7 @@
   font-family: 'Poppins';
 }
 header {
-  margin-top: 50px;
+  margin-top: 30px;
   color: #ffff;
 }
 
@@ -47,7 +47,22 @@ h1.border-bottom {
   border-color: #dc3545;
   box-shadow: none;
 }
-button {
+#b-h{
   height: 90px;
 }
 
+section label {
+  width: 55px;
+  /* text-align: right; */
+  font-size: 1rem;
+  color: #dc3545;
+}
+
+section div span {
+  color: #2f3293ff;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+section p {
+  font-size: 2.5rem;
+}
