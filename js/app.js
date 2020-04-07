@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('PosApp', [])
+    .module('PosApp', ['angular-loading-bar', 'ngAnimate'])
     .controller('DataAddController', DataAddController)
     .controller('ShowDataController', ShowDataController)
     .service('DataService', DataService)

@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/app.css">
@@ -32,33 +33,71 @@
   <main class="container">
     <div class="row mt-3 p-3 bg-white rounded shadow-lg">
       <h1 class="border-bottom border-gray pb-2 mb-0 mx-auto">Pulse Oximetry With Datalogging System</h1>
-      <div class="col-12 " ng-controller="DataAddController as dataAdd">
+      <div class="col-12 " ng-controller="DataAddController as dataAdd" ng-cloak>
         <div class="row mt-5" ng-if="dataAdd.show">
-          <div class="col-md-6">
-            <div class="form-group row">
-              <label for="name" class="col-md-2 col-form-label">Name</label>
-              <div class="col-md-10 col-sm-12">
-                <input type="text" ng-model="dataAdd.name" class="form-control" id="name" placeholder="Enter Name..."
-                  autocomplete="off">
+          <form action="" class="col-12" novalidate name="dataForm"> 
+           <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label for="name" class="col-md-2 col-form-label">Name</label>
+                <div class="col-md-10 col-sm-12">
+                  <input 
+                    type="text" 
+                    ng-model="dataAdd.name"
+                    name="name"
+                    required
+                    maxlength="50"
+                    minlength="10"
+                    pattern="(^[a-zA-Z_ ]*$)" 
+                    class="form-control" 
+                    id="name" 
+                    placeholder="Enter Name..." 
+                    autocomplete="off">
+                  <span
+                    class="small text-danger" 
+                    ng-if="(dataForm.name.$error.maxlength || dataForm.name.$error.required || dataForm.name.$invalid) && dataForm.name.$touched">
+                    Name is required and must be only alphabet and space and less than 50 char.
+                  </span>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="age" class="col-md-2 col-form-label">Age</label>
+                <div class="col-md-10 col-sm-12">
+                  <input 
+                    type="text" 
+                    ng-model="dataAdd.age" 
+                    class="form-control" 
+                    id="age"
+                    name="age"
+                    required 
+                    maxlength="3"
+                    pattern="(^[0-9]+$)"
+                    placeholder="Enter Age..." 
+                    autocomplete="off">
+                    <span 
+                      class="small text-danger"
+                      ng-if="(dataForm.name.$error.maxlength || dataForm.age.$error.required || dataForm.age.$invalid) && dataForm.age.$touched">
+                      Age is required and must be only numbers.
+                    </span>
+                </div>
               </div>
             </div>
-            <div class="form-group row">
-              <label for="age" class="col-md-2 col-form-label">Age</label>
-              <div class="col-md-10 col-sm-12">
-                <input type="text" ng-model="dataAdd.age" class="form-control" id="age" placeholder="Enter Age..."
-                  autocomplete="off">
-              </div>
+            <div class="col-md-6">
+              <button 
+                id="b-h" 
+                type="button" 
+                class="btn btn-lg btn-block btn-outline-danger"
+                ng-disabled="dataForm.$invalid"
+                ng-click="dataAdd.showMyHealtyStatus();">
+                <i class="fas fa-heartbeat fa-3x mr-3"></i>
+                Show My Health Status
+              </button>
             </div>
-          </div>
-          <div class="col-md-6">
-            <button id="b-h" type="button" class="btn btn-lg btn-block btn-outline-danger"
-              ng-click="dataAdd.showMyHealtyStatus();"><i class="fas fa-heartbeat fa-3x mr-3"></i>
-              Show My Health Status
-            </button>
-          </div>
+           </div>
+          </form>
         </div>
       </div>
-      <section id="result" class="col-12 mt-4" ng-controller="ShowDataController as showData">
+      <section id="result" class="col-12 mt-4" ng-controller="ShowDataController as showData" ng-cloak>
         <div ng-show="showData.person.name">
           <div class="row">
             <div class="col-md-5 col-sm-12">
@@ -127,7 +166,7 @@
       </section>
     </div>
   </main>
-  <footer>
+  <footer ng-cloak>
     <div class="container">
       <div class="row">
         <div class="small col-12 mt-0 pt-0 text-center">&copy; All Right Reversed <a href="http://cetb.edu.ly"
@@ -135,13 +174,14 @@
       </div>
     </div>
   </footer>
-
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/all.min.js"></script>
   <script src="js/xlsx.full.min.js"></script>
   <script src="js/angular.min.js"></script>
+  <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 
